@@ -160,7 +160,7 @@ SelectFileDLG(filters, initialDir := "", DefaultExt := "", HWND := "", Title := 
 	FinalFilterString := ""
 	For _, Filter in Filters {
 		Filter__ := RegExReplace(Filter, "(.|\s)+\(")
-		Filter__ := StrReplace(Filter__, "\)")
+		Filter__ := StrReplace(Filter__, ")")
 		FinalFilterString .= Filter "|" Filter__ "|"
 	}
 
