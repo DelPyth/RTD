@@ -46,11 +46,11 @@ Gui, 1:Add, Text, x10 y55 w50 h20 0x200, Max
 Gui, 1:Add, Text, x10 y95 w50 h15, Presets
 Gui, 1:Add, DropDownList, x60 y95 w100 h200 vPreset gPreset, 6||8|10|16|20|22|24|32|Heads or Tails
 Gui, 1:Tab, 2, 1
-Gui, 1:Add, ListBox, x5 y35 w190 h260 vOptions, % Info
+Gui, 1:Add, Edit, x200 y25 w175 h20 vLine
+Gui, 1:Add, ListBox, x5 y30 w190 h260 vOptions, % Info
 Gui, 1:Add, Button, x200 y50 w75 h23 gAddList Default, Add
 Gui, 1:Add, Button, x200 y75 w75 h23 gRemoveList, Remove
 Gui, 1:Add, Button, x200 y100 w75 h23 gResetList, Reset
-Gui, 1:Add, Edit, x200 y25 w175 h20 vLine
 Gui, 1:Show, w380 h290
 Return
 
@@ -83,7 +83,7 @@ Roll:
 		Loop, Parse, All_CT__, |
 			Temp.Push(A_LoopField)
 		MsgBoxEx("Choosing...", "RTD",, 5,,, 2, 1)
-		MsgBoxEx("I picked '" StrReplace(Temp[Random(MaxIndex - 1, 1)], "`n") "!'", "RTD",,,,,, 1)
+		MsgBoxEx("I picked '" StrReplace(Temp[Random(MaxIndex - 1, 1)], "`r`n") "!'", "RTD",,,,,, 1)
 	} Else {
 		If (Preset = "Heads or Tails") {
 			MsgBoxEx("Flipping...", "RTD",, 5,,, 2, 1)
